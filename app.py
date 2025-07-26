@@ -54,8 +54,8 @@ def convert_df(df):
 csv = convert_df(filtered_df)
 st.download_button("⬇️ Download Filtered Data", csv, "filtered_njatuvella.csv", "text/csv")
 
-st.markdown("### 📊 Summary Statistics")
-st.dataframe(filtered_df.describe(include='all'), use_container_width=True)
+# st.markdown("### 📊 Summary Statistics")
+# st.dataframe(filtered_df.describe(include='all'), use_container_width=True)
 
 st.markdown("### 📈 Charts & Visualization")
 
@@ -79,12 +79,12 @@ elif chart_type == "Line":
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.markdown("### 🗺️ Map View")
-if {"Latitude", "Longitude"}.issubset(filtered_df.columns):
-    map_df = filtered_df.dropna(subset=["Latitude", "Longitude"])
-    st.map(map_df[["Latitude", "Longitude"]])
-elif "Location" in filtered_df.columns:
-    st.info("🧭 Convert 'Location' column to Latitude/Longitude for map view support.")
+# st.markdown("### 🗺️ Map View")
+# if {"Latitude", "Longitude"}.issubset(filtered_df.columns):
+#     map_df = filtered_df.dropna(subset=["Latitude", "Longitude"])
+#     st.map(map_df[["Latitude", "Longitude"]])
+# elif "Location" in filtered_df.columns:
+#     st.info("🧭 Convert 'Location' column to Latitude/Longitude for map view support.")
 
 st.markdown("### 🔄 Pivot Table")
 
